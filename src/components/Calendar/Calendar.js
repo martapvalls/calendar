@@ -12,6 +12,7 @@ const Calendar = () => {
     useEffect(() => {
         const days = getDays()
         setDays(days)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     //get total days of the month

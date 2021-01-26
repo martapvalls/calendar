@@ -13,6 +13,7 @@ const Day = ({day}) => {
 
     useEffect(() => {
         sortDates()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [update])
 
     //update dates from that day, when a new date is introduced
