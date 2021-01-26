@@ -37,4 +37,17 @@
 
 input{
     width: 50%;
+    border: 1px solid  rgb(29, 135, 197);
+}
+
+button{
+    width: 50%;
+    border: 2px solid  rgb(29, 135, 197);
+    padding: 2px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(29, 135, 197);
+    color: white;
 }

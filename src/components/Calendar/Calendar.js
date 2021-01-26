@@ -4,42 +4,45 @@ import Day from '../Day/Day'
 
 const Calendar = () => {
     const [days, setDays] = useState([])
+    const [currentMonth, setCurrentMonth] = useState('')
 
-    let diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo', ];
+    let daysWeek = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo', ];
+    let months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
     useEffect(() => {
-        const dias = getDays()
-        setDays(dias)
+        const days = getDays()
+        setDays(days)
     }, [])
 
-    //obtener los días totales del mes y en qué día de la semana caen
+    //get total days of the month
     const getDays = () => {
         let today = new Date()
-        let año = today.getFullYear();
-        let mes = today.getMonth();
-        
-        let diasMes = new Date(año, mes, 0).getDate();
-        
-        let dias = []
+        let year = today.getFullYear()
+        let month = today.getMonth()
 
-        for (let dia = 1; dia <= diasMes; dia++) {
-          let indice = new Date(año, mes, dia - 1).getDay();
+        setCurrentMonth( `${months[month]} ${today.getFullYear()}`)
+        
+        let daysMonth = new Date(year, month, 0).getDate()
+        
+        let days = []
 
-            let dia_ = { id: dia, dia, diasSemana: diasSemana[indice], indice: indice }
-            dias.push(dia_)
+        for (let day = 1; day <= daysMonth; day++) {
+          let dayIndex = new Date(year, month, day - 1).getDay()
+
+            let day_ = { id: day, day, daysWeek: daysWeek[dayIndex], index: dayIndex }
+            days.push(day_)
         }
-        console.log(dias)
-        return dias
+        return days
     }
 
     return (  
         <div className="container">
-            <h1>Enero 2021</h1>
+            <h1> {currentMonth}</h1>
             <ol className="calendar">
-                {diasSemana.map(dia => <li className="day__name" key={dia}> {dia} </li>)}
+                {daysWeek.map(day => <li className="day__name" key={day}> {day} </li>)}
 
                 {days.map(day => 
-                    <li key={day.id} className={`${(day.id === 1 ? 'first-day day' : 'day')}`}> 
+                    <li key={day.id} className={`${(day.id === 1 ? `first-day__${day.daysWeek} day`  : 'day')}`}> 
                         <Day day={day}/>                   
                     </li>
                 )}

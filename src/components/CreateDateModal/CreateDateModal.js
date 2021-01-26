@@ -19,7 +19,7 @@ function CreateDateModal({setOpenModal, getDate}) {
         })
     }
 
-    //when form is send
+    //when form is send, update the date to date component
     const submitDate = e => {
         e.preventDefault()
 
@@ -52,6 +52,7 @@ function CreateDateModal({setOpenModal, getDate}) {
                     type="text"
                     name="title"
                     placeholder="Título cita"
+                    maxLength="15"
                     onChange={handleChange}
                     value={title}
                 />

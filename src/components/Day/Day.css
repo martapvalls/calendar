@@ -1,3 +1,18 @@
-.add_date{
+.add__date{
     cursor: pointer;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.add__date:hover{
+    font-size: 1.8rem;
+}
+
+.date__details{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 95%;
+    background-color: rgb(209, 233, 255);
 }

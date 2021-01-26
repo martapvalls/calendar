@@ -19,12 +19,56 @@ ol {
     justify-content: center;
     align-items: center;
 }
-.first-day{
-    grid-column-start: 5;
-}
+
 
 .day{
     border: 1px solid rgb(247, 247, 247);
     text-align: right;
-    padding-right: 1rem;
+    padding: 0 1rem;
+    overflow: auto;
+    height: 120px;
+    width: 170px;
+    position: relative;
+    padding-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day::-webkit-scrollbar{
+    width: 6px;
+}
+
+.day::-webkit-scrollbar-thumb{
+    background: rgb(247, 247, 247);
+    border-radius: 10px;
+}
+
+.day p{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    margin: 0;
+    font-size: 1.6rem;
+}
+.first-day__Lunes{
+    grid-column-start: 1;
+}
+.first-day__Martes{
+    grid-column-start: 2;
+}
+.first-day__Miércoles{
+    grid-column-start: 3;
+}
+.first-day__Jueves{
+    grid-column-start: 4;
+}
+.first-day__Viernes{
+    grid-column-start: 5;
+}
+.first-day__Sábado{
+    grid-column-start: 6;
+}
+.first-day__Domingo{
+    grid-column-start: 7;
 }

@@ -5,9 +5,10 @@ body {
   font-family: sans-serif;
   background-image: linear-gradient(-225deg, #b7cee9 0%, #85b6ee 52%, #1870d4 100%);
   min-height: 100vh;
-  padding-bottom: 5rem;
 }
 
 ul{
   list-style: none;
+  padding: 0;
+  width: 95%;
 }
